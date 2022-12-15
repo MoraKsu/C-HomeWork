@@ -6,8 +6,23 @@ a = 5; b = 7 -> max = 7
 a = 2 b = 10 -> max = 10
 a = -9 b = -3 -> max = -3
 */
+/*
+Console.Write("Input a first number: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a second number: ");
+int b = Convert.ToInt32(Console.ReadLine());
 
+int max = 0;
 
+if(a > b)
+{
+  Console.WriteLine(max = a);
+}
+else
+{
+  Console.WriteLine(max = b);
+}
+*/
 
 /*
 Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
