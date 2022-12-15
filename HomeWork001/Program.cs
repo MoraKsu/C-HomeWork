@@ -14,15 +14,23 @@ Console.Write("Input any second number: ");
 int b = Convert.ToInt32(Console.ReadLine());
 
 int max = 0;
+int min = 0;
 
 if(a > b)
 {
-  Console.WriteLine(max = a);
+  max = a;
+  min = b;
 }
 else
 {
-  Console.WriteLine(max = b);
+  max = b;
+  min = a;
 }
+
+Console.Write("Число max = ");
+Console.WriteLine(max);
+Console.Write("Число min = ");
+Console.WriteLine(min);
 */
 
 /*
@@ -58,7 +66,19 @@ Console.WriteLine(max);
 7 -> нет
 */
 
+/*
+Console.Write("Введите любое число, чтобы проверить является ли оно четным: ");
+int num = Convert.ToInt32(Console.ReadLine());
 
+if(num % 2 == 0)
+{
+  Console.WriteLine(true);
+}
+else
+{
+  Console.WriteLine(false);
+}
+*/
 
 /*
 Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
