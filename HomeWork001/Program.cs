@@ -6,10 +6,11 @@ a = 5; b = 7 -> max = 7
 a = 2 b = 10 -> max = 10
 a = -9 b = -3 -> max = -3
 */
+
 /*
-Console.Write("Input a first number: ");
+Console.Write("Input any first number: ");
 int a = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input a second number: ");
+Console.Write("Input any second number: ");
 int b = Convert.ToInt32(Console.ReadLine());
 
 int max = 0;
@@ -31,7 +32,24 @@ else
 22 3 9 -> 22
 */
 
+/*
+Console.Write("Input any first numbers: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input any second number: ");
+int b = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input any third number: ");
+int c = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"{a}, {b}, {c}");
 
+int max = a;
+
+if(a > max) max = a;
+if(b > max) max = b;
+if(c > max) max = c;
+
+Console.Write("max = ");
+Console.WriteLine(max);
+*/
 
 /*
 Задача 6: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
