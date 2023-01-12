@@ -9,7 +9,7 @@ int GetNumberPower(int numA, int numB) {
   for (int i = 1; i <= numB; i++) {
     number *= numA;
   }
-  Math.Pow(numA, numB);
+  // Math.Pow(numA, numB);
   return number;
 }
 Console.Write("Input a number A: ");
@@ -29,9 +29,10 @@ Console.WriteLine($"Число {a} в {b} степени = {result}");
 /*
 int SumNumbers(int num) {
   int sum = 0;
-  sum += num % 10;
-  num /= 10;
-  if (num > 0) sum += SumNumbers(num);
+  while (num > 0) {
+    sum += num % 10;
+    num /= 10;
+  }
   return sum;
 }
 Console.Write("Input a number: ");
