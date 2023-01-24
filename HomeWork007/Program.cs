@@ -88,7 +88,7 @@ GetElement(myArray, myRows, myColumns);
 
 // Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
-/*
+
 int [,] CreateRandom2dArray()
 {
     Console.Write("Input a number of rows: ");
@@ -119,12 +119,12 @@ void Show2dArray(int[,] array)
 
 double[] GetArithmeticMean(int[,] array)
 {
-  double[] result = new double[array.GetLength(0)];
-    for(int i = 0; i < array.GetLength(0); i++)
+  double[] result = new double[array.GetLength(1)];
+    for(int j = 0; j < array.GetLength(1); j++)
     {
-      for(int j = 0; j < array.GetLength(1); j++)
-        result[i] += array[i,j];
-      result[i] = result[i] / array.GetLength(1);
+      for(int i = 0; i < array.GetLength(0); i++)
+        result[j] += array[i,j];
+      result[j] = result[j] / array.GetLength(0);
     }
   return result;
 }
@@ -141,4 +141,3 @@ Show2dArray(myArray);
 double[] myArithmeticMean = GetArithmeticMean(myArray);
 Console.WriteLine("Arithmetic mean each column: ");
 ShowArithmeticMean(myArithmeticMean);
-*/
