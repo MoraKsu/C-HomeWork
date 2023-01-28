@@ -113,57 +113,93 @@ Console.WriteLine($"Наименьшая сумма элементов в стр
 
 // Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 
-/*
-int [,] CreateRandom2dArray()
+
+void CreateRandom2dArray()
 {
-    Console.Write("Input a number of rows: ");
-    int rows = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a number of columns: ");
-    int columns = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a min possible value: ");
-    int minValue = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a max possible value: ");
-    int maxValue = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Enter the number of rows for  array 1: ");
+  int rows1 = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Enter the number of columns for array 1: ");
+  int cols1 = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a min possible value: ");
+  int minValue1 = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a max possible value: ");
+  int maxValue1 = Convert.ToInt32(Console.ReadLine());
     
-    int[,] array = new int[rows, columns];
-    for(int i = 0; i < rows; i++)
-        for(int j = 0; j < columns; j++)
-            array[i,j] = new Random().Next(minValue, maxValue + 1);
-    return array;
-}
-void Show2dArray(int[,] array)
-{
-    for(int i = 0; i < array.GetLength(0); i++)
+  int[,] array1 = new int[rows1, cols1];
+  for(int i = 0; i < rows1; i++)
+  {
+    for(int j = 0; j < cols1; j++)
     {
-        for(int j = 0; j < array.GetLength(1); j++)
-            Console.Write(array[i,j] + " ");
-        Console.WriteLine();
+      array1[i,j] = new Random().Next(minValue1, maxValue1 + 1);
+      Console.Write(array1[i,j] + " ");
     }
     Console.WriteLine();
+  }
+  Console.WriteLine();
+
+  Console.Write("Enter the number of rows for  array 2: ");
+  int rows2 = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Enter the number of columns for array 2: ");
+  int cols2 = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a min possible value: ");
+  int minValue2 = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Input a max possible value: ");
+  int maxValue2 = Convert.ToInt32(Console.ReadLine());
+    
+  int[,] array2 = new int[rows2, cols2];
+  for(int i = 0; i < rows2; i++)
+  {
+    for(int j = 0; j < cols2; j++)
+    {
+      array2[i,j] = new Random().Next(minValue2, maxValue2 + 1);
+      Console.Write(array2[i,j] + " ");
+    }
+    Console.WriteLine();
+  }
+  Console.WriteLine();
+
+  if (cols1 != rows2)
+  {
+    Console.WriteLine("Error: The number of columns in matrix 1 must be equal to the number of rows in matrix 2.");
+  }
+  else
+  {
+    int[,] result = ProductTwoArray(array1, array2);
+    Console.WriteLine("Произведение двух матриц: ");
+    for (int i = 0; i < rows1; i++)
+    {
+      for (int j = 0; j < cols2; j++)
+      {
+        Console.Write(result[i,j] + " ");
+      }
+      Console.WriteLine();
+    }
+  }
 }
 
 int[,] ProductTwoArray(int[,] arr1, int[,] arr2)
 {
-  int[,] product = new int[arr1.GetLength(0), arr1.GetLength(1)];
-    for (int i = 0; i < arr1.GetLength(0); i++)
+  int rows1 = arr1.GetLength(0);
+  int cols1 = arr1.GetLength(1);
+  int rows2 = arr2.GetLength(0);
+  int cols2 = arr2.GetLength(1);
+
+  int[,] product = new int[rows1, cols2];
+    for (int i = 0; i < rows1; i++)
     {
-        for (int j = 0; j < arr2.GetLength(1); j++)
+      for (int j = 0; j < cols2; j++)
+      {
+        for (int k = 0; k < cols1; k++)
         {
-            product[i, j] = arr1[i, j] * arr2[i, j];
+          product[i, j] += arr1[i, k] * arr2[k, j];
         }
+      }
     }
-    return product;
+  return product;
 }
 
-int[,] arr1 = CreateRandom2dArray();
-Show2dArray(arr1);
-int[,] arr2 = CreateRandom2dArray();
-Show2dArray(arr2);
+CreateRandom2dArray();
 
-int[,] product = ProductTwoArray(arr1, arr2);
-Console.WriteLine("Произведение двух матриц: ");
-Show2dArray(product);
-*/
 
 // Задача 60: Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 
@@ -233,6 +269,7 @@ Show3dArray(array3D);
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 
+/*
 int[,] SpiralArray()
 {
   Console.Write("Input a size array: ");
@@ -289,5 +326,5 @@ void Show2dArray(int[,] array)
 
 int[,] myArray = SpiralArray();
 Show2dArray(myArray);
-
+*/
 
