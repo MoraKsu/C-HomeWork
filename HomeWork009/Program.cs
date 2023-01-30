@@ -49,7 +49,7 @@ m = 3, n = 2 -> A(m,n) = 29
 int FunctionAck(int m, int n)
 {
   if (m == 0) return n + 1;
-  else if (n == 0) return FunctionAck(m - 1, 1);
+  else if (n == 0 && m != 0) return FunctionAck(m - 1, 1);
   else return FunctionAck(m - 1, FunctionAck(m, n - 1));
 }
 
